@@ -5,6 +5,7 @@ var win;
 
 var counter = 0;
 var targetNumber;
+var crystal = 0;
 
 //Creating multiple crystals each with their own unique number value. 
 // random number should be generate every single time we win or lose.
@@ -29,24 +30,25 @@ $(".col-sm").append(crysals);
 }
 
 $(".col-sm").on('click', function() {
-    console.log($(this));
+    var num = parseInt($(this).attr("data-crystalvalue"));
+    crystal += num;
+    console.log(crystal);
+    //console.log($(this));
 
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
+     //crystalValue = parseInt(crystalValue);
     // Every click, from every crystal adds to the global counter.
-    counter += crystalValue;
+    // counter += crystalValue;
 
 });
-
 
 // All of the same game win-lose logic.
     alert("New score: " + counter);
 
-   if (counter === targetNumber) {
+   if (counter === counter) {
      alert("You win!");
    }
 
-   else if (counter >= targetNumber) {
+   else if (counter >= counter) {
       alert("You lose!!");
     }
 
